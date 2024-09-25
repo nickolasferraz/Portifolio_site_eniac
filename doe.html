@@ -21,23 +21,35 @@
                 <li><a href="#Depoimento_ ">Depoimentos</a></li>
             </ul>
         </nav>
-        <section id="galeria" class="galeria">
-            <h1>Galeria</h1>
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnqoC9W-OWDfJ1iB52BKcdvrKnbZpzRUJ3hQ&s" alt="Imagem 1">
+        <section id="doacao" class="doacao-form">
+            <h1>Faça uma Doação</h1>
+            <p>Preencha o formulário abaixo para gerar um boleto para doação.</p>
+            <form action="enviar-boleto.php" method="POST">
+                <div>
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
                 </div>
-                <div class="gallery-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmm2cnEkubJ_iL8BUALHjx0YYWuZELwywp3Jb3joE1ozbQipkZC2zOAVVTOY0KZ6iNxhI&usqp=CAU" alt="Imagem 2">
+        
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="Seu melhor e-mail">
                 </div>
-                <div class="gallery-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtIgtNrdNeDJZ-ugCqUm23hJtxPeeIXtkqbpegKnzm7hcVySafwkruZWXsXS8ADAwgYAk&usqp=CAU" alt="Imagem 3">
+        
+                <div>
+                    <label for="valor">Valor da Doação (R$):</label>
+                    <input type="number" id="valor" name="valor" required min="10" step="0.01" placeholder="Ex: 100.00">
                 </div>
-                <div class="gallery-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWbTpZpo0_Xjc0KbBSB_Z_NGvrM-sPzEsp9w&s" alt="Imagem 4">
+        
+                <div>
+                    <label for="mensagem">Mensagem (opcional):</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Deixe uma mensagem, se desejar"></textarea>
                 </div>
-                <!-- Adicione mais itens da galeria conforme necessário -->
-            </div>
+        
+                <div>
+                    <button type="submit">Gerar Boleto</button>
+                </div>
+            </form>
+        </section>
         
             <!-- Modal para visualização em tela cheia -->
             <div id="modal" class="modal">
